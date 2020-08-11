@@ -30,13 +30,14 @@ questions = [
 ]
 
 answers = prompt(questions)
+name = answers["project_name"]
 extras = answers["extras"]
 if "SQLite(Flask-SQLAlchemy)" in extras and "MongoDB(Flask-PyMongo)" in extras:
     print("You can only choose one database type!")
     exit()
 
 print("Here are your selections:")
-print("Project name:", answers["project_name"])
+print("Project name:", name)
 for extra in extras:
     print("-", extra)
 
@@ -53,3 +54,11 @@ if not confirm["continue"]:
     print("Ok. Bye.")
     exit()
 
+# generate the files and copy them here
+
+# run make install
+
+print("Successfully created %s!" % (name,))
+print('To get started, do:')
+print('\t1) cd', name)
+print('\t2) make start')
