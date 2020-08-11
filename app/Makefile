@@ -25,5 +25,5 @@ test:
 ### lint - lint code
 .PHONY: lint
 lint:
-	isort -rc --multi-line=3 --trailing-comma --force-grid-wrap=0 --use-parentheses --line-width=88 .
+	isort --multi-line=3 --trailing-comma --force-grid-wrap=0 --use-parentheses --line-width=88 .
 	black .

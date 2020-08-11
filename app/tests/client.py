@@ -1,7 +1,10 @@
-import pytest
-import tempfile
 import os
+import tempfile
+
+import pytest
+
 from app import app
+
 
 @pytest.fixture
 def client():

@@ -1,4 +1,9 @@
+black
 flask
-flask_cors
 pytest
 gunicorn
+Flask-CORS
+Flask-Login
+Flask-Admin
+Flask-WTF
+Flask-SQLAlchemy

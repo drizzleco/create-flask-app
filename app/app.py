@@ -1,10 +1,10 @@
-from flask import (
-    Flask,
-    jsonify,
-    request,
-    render_template,
-)
+from flask import Flask, jsonify, render_template, request
 from flask_cors import CORS
+import flask_login
+import flask_admin
+import flask_wtf
+import flask_sqlalchemy
+
 from config import Config
 
 app = Flask(__name__)
