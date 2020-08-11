@@ -8,7 +8,7 @@ help :
 install:
 	python3 -m venv .env; \
 	. .env/bin/activate; \
-	pip install flask flask_cors
+	pip install -r requirements.txt
 
 ### start - start flask dev server
 .PHONY: start
