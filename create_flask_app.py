@@ -6,9 +6,15 @@ from jinja2 import Template
 scaffold_path = 'app/'
 
 def extras_includes(extra):
+    """
+    check if extra is included in extras selected by user
+    """
     return any(extra in s.lower() for s in extras)
 
 def render_and_copy(src, dest):
+    """
+    read in src as a jinja template and save the rendered output to dest
+    """
     with open(src) as f:
         template = Template(f.read())
         template.globals['extras_includes'] = extras_includes   
@@ -23,10 +29,16 @@ def render_and_copy(src, dest):
         f.write(parsed)
         
 def render_and_copy_files(list_of_files):
+    """
+    run render_and_copy for a list of files
+    """
     for file in list_of_files:
         render_and_copy(scaffold_path + file, name + '/' + file)
 
 def prompt_user():
+    """
+    prompt user for selections, copy files, and run make install
+    """
     questions = [
     {"type": "input", "name": "project_name", "message": "Name your project:"},
     {
