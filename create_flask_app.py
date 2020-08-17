@@ -86,7 +86,7 @@ def prompt_user():
     os.makedirs(name, exist_ok=True)
 
     base_folders = ['static', 'templates']
-    base_files = ['app.py', 'config.py', 'Makefile', 'README.md', 'requirements.txt', 'setup.py']
+    base_files = ['app.py', 'config.py', 'Makefile', 'README.md', 'requirements.txt', 'setup.py', '.gitignore']
 
     # render and copy flask static and template dirs
     for folder in base_folders:

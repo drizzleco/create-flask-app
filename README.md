@@ -14,6 +14,7 @@ autogenerate boilerplate code for a flask app
   - Makefile
   - setup.py
   - requirements.txt
+  - .gitignore
 
   and optional extras including:
 
