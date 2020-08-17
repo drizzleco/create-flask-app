@@ -4,8 +4,10 @@ autogenerate boilerplate code for a flask app
 
 ## Features
 
-- Generate a Flask app with project files:
+- Generate a basic Flask app with:
 
+  - app.py
+  - config.py
   - static folder
   - templates folder
   - README.md
@@ -20,28 +22,29 @@ autogenerate boilerplate code for a flask app
   - Heroku
   - Job Scheduler
 
-    Flask Libraries
+    <u>Flask Libraries</u>
 
   - Flask-Login
   - Flask-Admin
   - Flask-WTF
 
-    JS Libraries
+    <u>JS Libraries</u>
 
   - Vue.js(CDN version)
   - jQuery
 
-    CSS
+    <u>CSS</u>
 
   - Sass
   - Bootstrap
 
-    Databases
+    <u>Databases</u>
 
-  - SQLite(Flask-SQLAlchemy
+  - SQLite(Flask-SQLAlchemy)
   - MongoDB(Flask-PyMongo)
 
-- Automatically install pip dependencies
+- Automatically install pip dependencies in a venv
+- Makefile with useful commands(starting server, lint code, test code)
 
 ## Getting Started
 
@@ -52,14 +55,8 @@ autogenerate boilerplate code for a flask app
 
 **OR**
 
-1. `python3 create_flask_app.py`
-
-**OR**
-
-To run in development:
+For development:
 
 1. `make install`
 2. `source .env/bin/activate`
-3. `python create_flask_app.py`
-
-## Screenshots
+3. `create-flask-app` **or** `python create_flask_app.py`
