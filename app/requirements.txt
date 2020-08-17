@@ -1,9 +1,10 @@
 black
 flask
-pytest
-gunicorn
 Flask-CORS
-Flask-Login
-Flask-Admin
-Flask-WTF
-Flask-SQLAlchemy
+{{ 'pytest' if extras_includes('test') }}
+{{ 'gunicorn' if extras_includes('heroku') }}
+{{ 'Flask-Login' if extras_includes('flask-login') }}
+{{ 'Flask-Admin' if extras_includes('flask-admin') }}
+{{ 'Flask-WTF' if extras_includes('flask-wtf') }}
+{{ 'Flask-SQLAlchemy' if extras_includes('sqlite') }}
+{{ 'Flask-PyMongo' if extras_includes('mongodb') }}

@@ -4,6 +4,7 @@ services:
     build: .
     ports:
       - "5000:5000"
+{% if extras_includes('sqlite') -%}
     environment:
       - DATABASE_URL=postgresql://app:supersafepassword@db:5432/app
     depends_on:
@@ -16,3 +17,4 @@ services:
       - POSTGRES_DB=app
     expose:
       - 5432
+{% endif -%}
