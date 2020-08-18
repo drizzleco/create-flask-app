@@ -2,6 +2,8 @@
 
 autogenerate boilerplate code for a flask app
 
+![demo](https://raw.githubusercontent.com/drizzleco/create-flask-app/master/img/demo.gif)
+
 ## Features
 
 - Generate a basic Flask app with:
