@@ -1,3 +1,4 @@
+from typing import List
 from PyInquirer import prompt, Separator
 from shutil import copy, copytree
 import os, errno, subprocess
@@ -5,13 +6,13 @@ from jinja2 import Template
 
 scaffold_path = 'app/'
 
-def extras_includes(extra):
+def extras_includes(extra: str) -> bool:
     """
     check if extra is included in extras selected by user
     """
     return any(extra in s.lower() for s in extras)
 
-def render_and_copy(src, dest):
+def render_and_copy(src: str, dest: str) -> None:
     """
     read in src as a jinja template and save the rendered output to dest
     """
@@ -28,14 +29,14 @@ def render_and_copy(src, dest):
     with open(dest, "w") as f:
         f.write(parsed)
         
-def render_and_copy_files(list_of_files):
+def render_and_copy_files(list_of_files: List[str]) -> None:
     """
     run render_and_copy for a list of files
     """
     for file in list_of_files:
         render_and_copy(scaffold_path + file, name + '/' + file)
 
-def prompt_user():
+def prompt_user() -> None:
     """
     prompt user for selections, copy files, and run make install
     """
