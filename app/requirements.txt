@@ -1,4 +1,5 @@
 black
+isort
 flask
 Flask-CORS
 {{ 'pytest' if extras_includes('test') }}
