@@ -2,6 +2,10 @@
 
 autogenerate boilerplate code for a flask app
 
+![version](https://img.shields.io/pypi/v/new-flask-app)
+
+# `pip install new-flask-app`
+
 ![demo](https://raw.githubusercontent.com/drizzleco/create-flask-app/master/img/demo.gif)
 
 ## Features
@@ -24,25 +28,13 @@ autogenerate boilerplate code for a flask app
   - Docker
   - Heroku
   - Job Scheduler
-
-    <u>Flask Libraries</u>
-
   - Flask-Login
   - Flask-Admin
   - Flask-WTF
-
-    <u>JS Libraries</u>
-
   - Vue.js(CDN version)
   - jQuery
-
-    <u>CSS</u>
-
   - Sass
   - Bootstrap
-
-    <u>Databases</u>
-
   - SQLite(Flask-SQLAlchemy)
   - MongoDB(Flask-PyMongo)
 
