@@ -98,7 +98,7 @@ def prompt_user() -> None:
     print('Copying files...')
     os.makedirs(name, exist_ok=True)
 
-    base_folders = ['static', 'templates']
+    base_folders = ['static/css', 'static/js', 'templates']
     base_files = ['app.py', 'config.py', 'Makefile', 'README.md', 'requirements.txt', 'setup.py', '.gitignore']
 
     # render and copy flask static and template dirs
@@ -119,6 +119,9 @@ def prompt_user() -> None:
     heroku_files = ['Procfile', 'runtime.txt']
     if extras_includes('heroku'):
         render_and_copy_files(heroku_files)
+
+    if extras_includes('sass'):
+        copytree(scaffold_path + 'static/scss', name + '/static/scss', dirs_exist_ok=True, copy_function=render_and_copy)
 
     sqlite_files = ['models.py']
     if extras_includes('sqlite'):
