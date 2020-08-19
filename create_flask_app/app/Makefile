@@ -15,13 +15,13 @@ install:
 start:
 	. .env/bin/activate; \
 	python app.py
-	
+{% if extras_includes('test') %}
 ### test - test python code
 .PHONY: test
 test:
 	. .env/bin/activate; \
 	tox
-
+{% endif %}
 ### lint - lint code
 .PHONY: lint
 lint:

@@ -6,6 +6,12 @@ from jinja2 import Template
 
 scaffold_path = 'app/'
 
+def resource_path(path: str) -> str:
+    """
+    return the absolute path for a file
+    """
+    return os.path.join(os.path.abspath(os.path.dirname(__file__)), path)
+
 def extras_includes(extra: str) -> bool:
     """
     check if extra is included in extras selected by user
@@ -15,10 +21,10 @@ def extras_includes(extra: str) -> bool:
 def render_and_copy(src: str, dest: str) -> None:
     """
     read in src as a jinja template and save the rendered output to dest
-    """
-    with open(src) as f:
+    """ 
+    with open(resource_path(src)) as f:
         template = Template(f.read())
-        template.globals['extras_includes'] = extras_includes   
+        template.globals['extras_includes'] = extras_includes
     parsed = template.render(name=name, extras=extras)
     if not os.path.exists(os.path.dirname(dest)):
         try:
@@ -103,7 +109,7 @@ def prompt_user() -> None:
 
     # render and copy flask static and template dirs
     for folder in base_folders:
-        copytree(scaffold_path + folder, name + '/' + folder, dirs_exist_ok=True, copy_function=render_and_copy)
+        copytree(resource_path(scaffold_path + folder), name + '/' + folder, dirs_exist_ok=True, copy_function=render_and_copy)
 
     # render and copy root files: app.py, README, Makefile, etc
     render_and_copy_files(base_files)
@@ -121,7 +127,7 @@ def prompt_user() -> None:
         render_and_copy_files(heroku_files)
 
     if extras_includes('sass'):
-        copytree(scaffold_path + 'static/scss', name + '/static/scss', dirs_exist_ok=True, copy_function=render_and_copy)
+        copytree(resource_path(scaffold_path + 'static/scss'), name + '/static/scss', dirs_exist_ok=True, copy_function=render_and_copy)
 
     sqlite_files = ['models.py']
     if extras_includes('sqlite'):

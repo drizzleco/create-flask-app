@@ -51,7 +51,7 @@ autogenerate boilerplate code for a flask app
 
 ## Getting Started
 
-1. `pip install .` to install the `create-flask-app` console script
+1. `pip install new-flask-app` to install the `create-flask-app` console script
 2. run `create-flask-app`
 3. after selecting extras, `cd` into the new directory and `make start` to start flask server
 4. done!
