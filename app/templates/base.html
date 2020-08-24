@@ -9,8 +9,18 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     {% endif -%}
+    {% if extras_includes('sass') -%}
+    {% raw -%}
+    {% assets "scss_all" %}
+    <link rel=stylesheet type=text/css href="{{ ASSET_URL }}">
+    {% endassets %}
+    {% endraw -%}
+    {% else -%}
     {% raw -%}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% endraw -%}
+    {% endif -%}
+    {% raw -%}
     <script src="{{url_for('static', filename='js/main.js')}}"></script>
     {% endraw -%}
     {% if extras_includes('vue') -%}
