@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="new-flask-app",
-    version="1.0.2",
+    version="1.0.3",
     author="Philip Zhang",
     author_email="jmslca123@gmail.com",
     description="Autogenerate boilerplate code for a Flask app",
@@ -22,7 +22,7 @@ setuptools.setup(
     ],
     python_requires=">=3.8",
     license="MIT",
-    install_requires=["PyInquirer", "jinja2"],
+    install_requires=["InquirerPy", "jinja2"],
     entry_points={
         "console_scripts": [
             "create-flask-app=create_flask_app.create_flask_app:prompt_user",
