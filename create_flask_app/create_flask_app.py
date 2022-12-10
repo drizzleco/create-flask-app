@@ -1,5 +1,6 @@
 from typing import List
-from PyInquirer import prompt, Separator
+from InquirerPy import prompt
+from InquirerPy.separator import Separator
 from shutil import copy, copytree
 import os, errno, subprocess
 from jinja2 import Template
@@ -58,23 +59,23 @@ def prompt_user() -> None:
             "message": "What else do you want to generate?",
             "name": "extras",
             "choices": [
-                {"name": "Test Suite(tox, pytest)"},
-                {"name": "Docker"},
-                {"name": "Heroku"},
-                {"name": "Job Scheduler"},
+                "Test Suite(tox, pytest)",
+                "Docker",
+                "Heroku",
+                "Job Scheduler",
                 Separator("Flask Libraries"),
-                {"name": "Flask-Login"},
-                {"name": "Flask-Admin"},
-                {"name": "Flask-WTF"},
+                "Flask-Login",
+                "Flask-Admin",
+                "Flask-WTF",
                 Separator("JS Libraries"),
-                {"name": "Vue.js(CDN Version)"},
-                {"name": "jQuery"},
+                "Vue.js(CDN Version)",
+                "jQuery",
                 Separator("CSS"),
-                {"name": "Sass"},
-                {"name": "Bootstrap"},
+                "Sass",
+                "Bootstrap",
                 Separator("Database"),
-                {"name": "SQLite(Flask-SQLAlchemy)"},
-                {"name": "MongoDB(Flask-PyMongo)"},
+                "SQLite(Flask-SQLAlchemy)",
+                "MongoDB(Flask-PyMongo)",
             ],
         },
     ]
