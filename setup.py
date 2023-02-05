@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="new-flask-app",
-    version="1.0.3",
+    version="1.0.4",
     author="Philip Zhang",
     author_email="jmslca123@gmail.com",
     description="Autogenerate boilerplate code for a Flask app",
